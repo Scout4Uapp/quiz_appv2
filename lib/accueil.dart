@@ -41,8 +41,10 @@ class _accueilState extends State<accueil> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Autoevaluaciones por Tema"),
+        title: const Text("Autoevaluaciones por Tema"),
         centerTitle: true,
+        backgroundColor: const Color.fromRGBO(94, 22, 119, 1),
+        toolbarHeight: 70,
       ),
       body: Scrollbar(
           child: Center(
@@ -52,7 +54,7 @@ class _accueilState extends State<accueil> {
         color: Colors.white,
         buttonBackgroundColor: Colors.white,
         animationCurve: Curves.easeInOut,
-        animationDuration: Duration(microseconds: 600),
+        animationDuration: const Duration(microseconds: 300),
         height: 50.0,
         items: const <Widget>[
           Icon(

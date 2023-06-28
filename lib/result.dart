@@ -47,32 +47,36 @@ class _resultState extends State<result> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Resultados",), centerTitle: true,
+        title: const Text("Resultados",), 
+        centerTitle: true,
+        backgroundColor: const Color.fromRGBO(94, 22, 119, 1),
+        toolbarHeight: 70,
+        
       ),
       body: Column(
         children: <Widget>[
-          Center(
+          const Center(
             child: Padding(
-                padding: const EdgeInsets.all(12.0),
-                child: Center( child: Text("QUIZSTAR",style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+                padding: EdgeInsets.all(12.0),
+                child: Center( child: Text("SCOUT4U",style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
                 ),
                 ),
           ),
-          Center(
+          const Center(
             child: Padding(
-                padding: const EdgeInsets.all(12.0),
+                padding: EdgeInsets.all(12.0),
                 child: Center(child: Text("¡Hazlo genial!", style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                   ),
                 )),
           ),
 
-          SizedBox(height: 70,),
+          const SizedBox(height: 40,),
           Container(
             child: Column(
               children: <Widget>[
               Material(
                 child: Container(
-                  width: 120.0,
+                  width: 250.0,
                   height: 120.0,
                 child: ClipRect(
                   child: Image (image: AssetImage(image
@@ -81,28 +85,28 @@ class _resultState extends State<result> {
                   ),
                 ),
               ),
-              Padding(padding: EdgeInsets.symmetric(
-                vertical: 5.0,
+              const Padding(padding: EdgeInsets.symmetric(
+                vertical: 10.0,
               horizontal: 10.0
               )),
 
               Center(
                 child: Text(message,
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 15.0),),
+                style: const TextStyle(fontSize: 22.0),),
               )
             ]),
           ),
 
-          Center(
+          const Center(
             child: Padding(
-              padding: const  EdgeInsets.all(12.0),
+              padding: EdgeInsets.all(12.0),
               child: Center(child: Text("", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),))
               ),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children:[
+                children:const [
                   SizedBox(width: 50,),
                   Flexible(
                     child: Divider(
@@ -113,7 +117,7 @@ class _resultState extends State<result> {
                       endIndent: 20,
                       ),
                     ),
-                    Text("My Record", style: TextStyle(fontSize: 20, color: Colors.black),),
+                    Text("Mi Registro", style: TextStyle(fontSize: 20,fontWeight: FontWeight.w900, color: Color.fromRGBO(94, 22, 119, 1)),),
                     Flexible(
                       child: Divider(
                         color: Colors.black,
@@ -126,20 +130,21 @@ class _resultState extends State<result> {
                       SizedBox(width: 50,),
                ],
             ),
-            SizedBox(width: 20,),
+            
+            const SizedBox(width: 20,),
             Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
 
                   children:[
-                    SizedBox(width: 50,),
-                    Text("Wins"),
-                    Text(marks.toString(),style: TextStyle(fontSize: 24, color: Colors.green),),
-                    Text("Losses"),
-                    Text((100-marks).toString(),style: TextStyle(fontSize: 24, color: Colors.red),),
-                    SizedBox(width: 50,),
+                    const SizedBox(width: 50,height: 50,),
+                    const Text("Ganados",style: const TextStyle(fontWeight: FontWeight.w900, fontSize: 20, color: Color.fromARGB(255, 0, 2, 0))),
+                    Text(marks.toString(),style: const TextStyle(fontWeight: FontWeight.w900, fontSize: 20, color: Color.fromARGB(255, 13, 96, 219)),),
+                    const Text("Perdidos",style: const TextStyle(fontWeight: FontWeight.w900, fontSize: 20, color: Color.fromARGB(255, 0, 2, 0))),
+                    Text((100-marks).toString(),style: const TextStyle(fontWeight: FontWeight.w900,fontSize: 20, color: Colors.red),),
+                    const SizedBox(width: 50,),
                   ],
                 ),
-            SizedBox(width: 80,),
+            const SizedBox(width: 80,),
             Row(
                 mainAxisAlignment: MainAxisAlignment.center,
 
@@ -150,7 +155,7 @@ class _resultState extends State<result> {
                           builder: (context)=> const artchoice(),));
                                                
                       },
-                      child: Text("Continue", style: TextStyle(fontSize: 25.0),
+                      child: const Text("Regresar", style: TextStyle(fontSize: 25.0),
                       ),
                       )
                   ],

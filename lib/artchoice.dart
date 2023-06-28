@@ -26,23 +26,23 @@ class _artchoiceState extends State<artchoice> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.white,),
+          icon: const Icon(Icons.arrow_back, color: Colors.white,),
           onPressed: () {
-            Navigator.of(context).pushReplacement(MaterialPageRoute(builder:(context) => accueil()));
+            Navigator.of(context).pushReplacement(MaterialPageRoute(builder:(context) => const accueil()));
           },),
-          title: Text("¡Siempre Listo!"),
+          title: const Text("¡Siempre Listo!"),
           centerTitle: true,
           ),
           body: Scrollbar(child: ListView(
             children: <Widget> [
-              Padding(
+              const Padding(
                 padding: EdgeInsets.all(15),
-                child: const Text("Jouez"),
+                child: Text("Jouez"),
               ),
-              Padding(padding: EdgeInsets.all(15),
+              Padding(padding: const EdgeInsets.all(15),
               child: Column(
                 children: <Widget>[
-                SizedBox(
+                const SizedBox(
                   width: 60,
                   height: 20,
                 ),  
@@ -50,7 +50,7 @@ class _artchoiceState extends State<artchoice> {
                   children: <Widget>[
                     Expanded(child: InkWell(
                       onTap: () {
-                        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => getjason()));
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const getjason()));
 
                       },
                       child:Container(
@@ -60,7 +60,7 @@ class _artchoiceState extends State<artchoice> {
                         color: Colors.green,
                         // Modificado color: Border.all(color: Colors.white, width: 1),
                         border: Border.all(color: Colors.white, width: 1),),
-                        child: Center(child: Text("Preguntas", style: TextStyle(fontSize: 30),)),
+                        child: const Center(child: Text("Preguntas", style: TextStyle(fontSize: 30),)),
                       ),
                       ),
                     ),

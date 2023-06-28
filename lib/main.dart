@@ -20,17 +20,18 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.indigo),
+      // Establecimos Comfortaa como la fuente predeterminada de la aplicación
+      theme: ThemeData(primarySwatch: Colors.indigo, fontFamily: 'Comfortaa'),
       title: "Quiz Scout4U",
       home: FutureBuilder(
           future: _fbApp,
           builder: (context, snapshot) {
             if (snapshot.hasError) {
-              return Text("Algun error ha ocurrido");
+              return const Text("¡¡OoopS!! Algun error ha ocurrido");
             } else if (snapshot.hasData) {
-              return Splash();
+              return const Splash();
             } else {
-              return Center(
+              return const Center(
                 child: CircularProgressIndicator(),
               );
             }
@@ -50,16 +51,16 @@ class _SplashState extends State<Splash> {
   @override
   void initState() {
     super.initState();
-    Timer(Duration(seconds: 3), () {
+    Timer(const Duration(seconds: 3), () {
       Navigator.of(context).pushReplacement(MaterialPageRoute(
-        builder: (context) => login(),
+        builder: (context) => const login(),
       ));
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       backgroundColor: Colors.white,
       body: Center(child: ImageIcon(AssetImage('assets/icon.png'))),
     );

@@ -21,8 +21,11 @@ class _loginState extends State<login> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text("Auto Evaluaciones"),
+        title: const Text("Auto Evaluaciones"),
         centerTitle: true,
+        backgroundColor: const Color.fromRGBO(94, 22, 119, 1),
+        toolbarHeight: 70,
+        
       ),
       body: FutureBuilder(
           future: FirebaseFirestore.instance.collection('point').get(),
@@ -35,7 +38,7 @@ class _loginState extends State<login> {
                     child: Container(
                       width: 200,
                       height: 150,
-                      child: ImageIcon(AssetImage('assets/icon.png')),
+                      child: const ImageIcon(AssetImage('assets/icon.png')),
                     ),
                   ),
                 ),
@@ -43,13 +46,13 @@ class _loginState extends State<login> {
                   width: 250,
                   height: 50,
                   child: ElevatedButton(
-                    child: Text("INICIAR"),
+                    child: const Text("INICIAR"),
                     onPressed: () async {
                       checkinternetconnecion();
                     },
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 130,
                 )
               ]),
@@ -61,13 +64,15 @@ class _loginState extends State<login> {
   void checkinternetconnecion() async {
     var result = await Connectivity().checkConnectivity();
     if (result == ConnectivityResult.none) {
-      _showDialog('No Internet', "You're not connected to a networks");
+      _showDialog('Sin internet', "No estás conectado a una red");
+
     } else if (result == ConnectivityResult.mobile) {
-      _showDialog('Internet', "You're connected over mobile Data");
-      Navigator.push(context, MaterialPageRoute(builder: (_) => accueil()));
+      _showDialog('Internet', "Estás conectado a través de datos móviles");
+      Navigator.push(context, MaterialPageRoute(builder: (_) => const accueil()));
+
     } else if (result == ConnectivityResult.wifi) {
-      _showDialog('Internet', "You're connected over wifi Data");
-      Navigator.push(context, MaterialPageRoute(builder: (_) => accueil()));
+      _showDialog('Internet', "Estás conectado a través de una red Wi-Fi");
+      Navigator.push(context, MaterialPageRoute(builder: (_) => const accueil()));
     }
   }
 
